@@ -6,7 +6,7 @@ async function getDirectUrl(ch, token) {
   const u2 = res1.headers.get("Location").replace("/redir?", "/download?");
   const res2 = await fetch(u2, { redirect: "manual " });
   const u3 = res2.headers.get("Location");
-  return u3;
+  return u3.replace("?download", "?");
 }
 
 exports.handler = async function(event, context) {
