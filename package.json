@@ -1,0 +1,28 @@
+{
+  "name": "1drv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "netlify-lambda serve src",
+    "build": "netlify-lambda build src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sokki/1drv.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sokki/1drv/issues"
+  },
+  "homepage": "https://github.com/sokki/1drv#readme",
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {
+    "netlify-lambda": "^1.4.2",
+    "prettier": "^1.16.4"
+  }
+}
