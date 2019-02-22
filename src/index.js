@@ -11,15 +11,19 @@ async function getDirectUrl(ch, token) {
 
 exports.handler = async function(event, context) {
   const { path } = event;
-  const [_, ch, token] = path.match(/.?\/index\/(.)\/s!(.*)$/);
-  const url = await getDirectUrl(ch, token);
+  try {
+    const [_, ch, token] = path.match(/.?\/index\/(.)\/s!(.*)$/);
+    const url = await getDirectUrl(ch, token);
 
-  const response = {
-    statusCode: 301,
-    headers: {
-      Location: url
-    }
-  };
-
-  return response;
+    return {
+      statusCode: 301,
+      headers: {
+        Location: url
+      }
+    };
+  } catch (e) {
+    return {
+      statusCode: 404
+    };
+  }
 };
