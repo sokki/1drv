@@ -1,2 +1,3 @@
-functions/
 .idea/
+.serverless
+node_modules/

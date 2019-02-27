@@ -1,0 +1,20 @@
+service:
+    name: hello-world
+
+provider:
+  name: cloudflare
+  config:
+    accountId: f6e77a339d955f4e97c7df98484ee8c1
+    zoneId: 9c459899402ceae83e195c8402966708
+
+plugins:
+  - serverless-cloudflare-workers
+
+functions:
+  index:
+    name: index
+    script: index
+    events:
+      - http:
+          url: 1drv.de/*
+          method: GET
